@@ -1,7 +1,9 @@
 package se.iths.provider;
 
 import se.iths.service.Cipher;
+import se.iths.service.EncryptStrategy;
 
+@EncryptStrategy("caesar")
 public class CaesarCipher implements Cipher {
     private static final int SECRET_SHIFTER = 7;
     private static final int LETTERS_IN_ALPHABET = 26;

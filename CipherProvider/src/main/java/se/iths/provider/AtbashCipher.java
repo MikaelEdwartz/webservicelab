@@ -1,10 +1,11 @@
 package se.iths.provider;
 
 import se.iths.service.Cipher;
+import se.iths.service.EncryptStrategy;
 
 import java.util.HashMap;
 import java.util.Map;
-
+@EncryptStrategy("atbash")
 public class AtbashCipher implements Cipher {
     private final Map<Character, Character> table = new HashMap<>();
 
