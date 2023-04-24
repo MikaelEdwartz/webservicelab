@@ -14,15 +14,18 @@ public class AtbashCipher implements Cipher {
         var cipher = new StringBuilder();
         var alphabetReversed = new StringBuilder();
 
-        getAlphabetAsString(alphabet);
-        getReversedAlphabetAsString(alphabet, alphabetReversed);
-
-        matchCharactersInMap(alphabet, alphabetReversed);
+        createMapWithMatchingCharacters(alphabet, alphabetReversed);
 
         for (char letter : stringToCipher.toLowerCase().toCharArray())
             appendCipheredString(cipher, letter);
 
         return cipher.toString();
+    }
+
+    private void createMapWithMatchingCharacters(StringBuilder alphabet, StringBuilder alphabetReversed) {
+        getAlphabetAsString(alphabet);
+        getReversedAlphabetAsString(alphabet, alphabetReversed);
+        matchCharactersInMap(alphabet, alphabetReversed);
     }
 
     private void appendCipheredString(StringBuilder cipher, char letter) {
